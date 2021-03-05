@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:53097",
-      "sslPort": 44379
+      "applicationUrl": "http://localhost:1170",
+      "sslPort": 44300
     }
   },
   "profiles": {
@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Mythras Character Generator": {
+    "Mythras-Character-Generator": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

@@ -1,6 +1,6 @@
 {
-  "name": "Mythras Character Generator",
-  "short_name": "Mythras Character Generator",
+  "name": "Mythras-Character-Generator",
+  "short_name": "Mythras-Character-Generator",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
