@@ -13,9 +13,9 @@ jobs:
     
     # sets up .NET Core SDK v1.7.2
     - name: Setup .Net Core SDK
-      uses: actions/setup-dotnet@v1.7.2
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.x
+        dotnet-version: 5.0.3
         
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
