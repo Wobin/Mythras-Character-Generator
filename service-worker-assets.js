@@ -57,11 +57,11 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-o2ZjGgax4yNl3\/rotlzeULXuEMeosUuOkH0T4yzcc70=",
+      "hash": "sha256-2igfDYMB6feKDaTpdP7xF9K\/UaJkT74VPN9Sv+3YloQ=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-9FFpGiUSAFa1kxf7JL\/+HiEUo\/gVb2wsXk6Qtq0u25o=",
+      "hash": "sha256-0KuZA1NPldeGoxPoT9TD+UK2VcCUFelxWrAj12kVRh4=",
       "url": "manifest.json"
     },
     {
@@ -97,8 +97,8 @@
       "url": "_framework\/dotnet.5.0.3.js"
     },
     {
-      "hash": "sha256-zHr5\/t7fW4uMbZ2JdUlEvMR1QXzNePR1TruseDWfpqM=",
-      "url": "Mythras-Character-Generator.styles.css"
+      "hash": "sha256-Rd4jDSbbFwS091oTGFb99hP6EjYBST3YeDkJ8zkHJvA=",
+      "url": "MythrasCharacterGenerator.styles.css"
     },
     {
       "hash": "sha256-ORH2etjdj75AYwWZekUUj4G1qqODX+6Dq195wFyAAus=",
@@ -161,8 +161,8 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-kInfvYrFrIg2w2YN38i7\/raqQ7VCX5Es1EIcTPdYygw=",
-      "url": "_framework\/Mythras-Character-Generator.dll"
+      "hash": "sha256-4tDgqfaBL+HcW58MJs472HHRwrPkMBl2Fw0QihwkM74=",
+      "url": "_framework\/MythrasCharacterGenerator.dll"
     },
     {
       "hash": "sha256-SfuiZ9o9O\/N\/LSfSQSOfGAnPC0U94Kxtjlu06JKL1QU=",
@@ -233,11 +233,11 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-sjJSllW9vNXO94GBasOaRyblJoDpolY4Z7gjKvxpFFM=",
+      "hash": "sha256-hKjMw0YM5iiVsUs57Z36TmBD4fzOuVzMFshDW58IeEo=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-Fx8Wz7g9aWUoNPFyXqVN2gDUXYFyIkre5eKPt4RdQy8=",
+      "hash": "sha256-Clf2KPvAQCPVDTjJ9u2fiozOJ69tuk6M61zfPYq441w=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -245,5 +245,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "F2Xjp8QH"
+  "version": "SgRIBFo\/"
 };
