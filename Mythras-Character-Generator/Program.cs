@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MythrasCharacterGenerator
+namespace Mythras_Character_Generator
 {
     public class Program
     {
