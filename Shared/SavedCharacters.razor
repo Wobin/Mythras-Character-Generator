@@ -1,0 +1,34 @@
+﻿@inject ILocalStorageService  LocalStorageService;
+@inherits BlazorStateComponent
+
+<h3>Saved Characters</h3>
+<RadzenAccordion>
+    <Items>
+        @foreach (var character in CharacterList)
+        {
+            <RadzenAccordionItem Text="@character.Name" Icon="account_box">
+                Created on - @character.CreationDate.ToString("dd-MM.yyyy") <RadzenButton Click=@(args => LoadCharacter(character)) Text="Load Character" Icon="account_circle" Style="margin-bottom: 20px; width: 150px" />
+            </RadzenAccordionItem>
+        }
+    </Items>
+</RadzenAccordion>
+
+
+@code {
+
+    CharacterListState CharacterListState => GetState<CharacterListState>();
+
+    public List<Player> CharacterList => CharacterListState.SavedList ?? new();
+
+
+    protected async override Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await Mediator.Send(new CharacterListState.SetCharacterListAction { storedList = (await LocalStorageService.GetItemAsync<List<Player>>("StoredCharacterSheets")) ?? new() } );
+    }
+
+    protected void LoadCharacter(Player player)
+    {
+
+    }
+}

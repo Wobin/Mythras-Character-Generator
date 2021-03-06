@@ -6,6 +6,7 @@ namespace MythrasCharacterGenerator.Models
     {        
         public Constants.Characteristics _type { get; init; }
         public int Value { get; set; }
+        public Characteristic() { }
 
         public Characteristic(Constants.Characteristics characteristic)
         {

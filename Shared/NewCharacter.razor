@@ -1,0 +1,12 @@
+﻿@inject ILocalStorageService  LocalStorageService;
+@inherits BlazorStateComponent
+
+<h3>Create a new character</h3>
+<RadzenButton Click=@(args => AddNewCharacter()) Text="Create Character" Icon="add_box" Style="margin-bottom: 20px; width: 150px" />
+@code {
+    protected async Task AddNewCharacter()
+    {
+        await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = new() { Name = $"New Character" } });
+        await LocalStorageService.SetItemAsync<List<Player>>("StoredCharacterSheets", GetState<CharacterListState>().SavedList);
+    }
+}
