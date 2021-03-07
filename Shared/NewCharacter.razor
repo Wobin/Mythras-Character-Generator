@@ -1,12 +1,14 @@
 ﻿@inject ILocalStorageService  LocalStorageService;
 @inherits BlazorStateComponent
+@inject HttpClient Http
 
 <h3>Create a new character</h3>
 <RadzenButton Click=@(args => AddNewCharacter()) Text="Create Character" Icon="add_box" Style="margin-bottom: 20px; width: 150px" />
 @code {
     protected async Task AddNewCharacter()
     {
-        await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = new() { Name = $"New Character" } });
+        var Name = (await Http.GetFromJsonAsync<NameInfo>("https://randomuser.me/api/?results=1&inc=name&noinfo")).Results.First().Name;
+        await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = new() { Name = $"{Name.First} {Name.Last}" } });
         await LocalStorageService.SetItemAsync<List<Player>>("StoredCharacterSheets", GetState<CharacterListState>().SavedList);
     }
 }

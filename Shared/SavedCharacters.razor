@@ -7,7 +7,7 @@
         @foreach (var character in CharacterList)
         {
             <RadzenAccordionItem Text="@character.Name" Icon="account_box">
-                Created on - @character.CreationDate.ToString("dd-MM.yyyy") <RadzenButton Click=@(args => LoadCharacter(character)) Text="Load Character" Icon="account_circle" Style="margin-bottom: 20px; width: 150px" />
+                Created on - @character.CreationDate.ToString("hh:mm:ss dd-MM-yyyy") <RadzenButton Click=@(args => LoadCharacter(character)) Text="Load Character" Icon="account_circle" Style="margin-bottom: 20px; width: 150px" /><RadzenButton Click=@(args => DeleteCharacter(character.Id)) Text="Delete Character" Icon="person_remove" Style="margin-bottom: 20px; width: 150px" />
             </RadzenAccordionItem>
         }
     </Items>
@@ -25,6 +25,11 @@
     {
         await base.OnInitializedAsync();
         await Mediator.Send(new CharacterListState.SetCharacterListAction { storedList = (await LocalStorageService.GetItemAsync<List<Player>>("StoredCharacterSheets")) ?? new() } );
+    }
+
+    protected async Task DeleteCharacter(Guid playerId)
+    {
+        await Mediator.Send(new CharacterListState.DeleteCharacterAction { PlayerId = playerId });
     }
 
     protected void LoadCharacter(Player player)
