@@ -305,7 +305,7 @@
       "url": "_framework\/TypeSupport.dll"
     },
     {
-      "hash": "sha256-RDKIvPn6q2gEAOY9OMqGfeEHcHV6Hw\/3lO6MT8ZmLiE=",
+      "hash": "sha256-pcL7zowtQ8f0bJrU3qNVPcsQ6gCkcUGpigmYayjc+Yk=",
       "url": "_framework\/MythrasCharacterGenerator.dll"
     },
     {
@@ -465,7 +465,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-uMlx6Aikhy1cOifMq31btXHY+xFOc5rOu85\/oEM5iaA=",
+      "hash": "sha256-bbET32DHthaabLDtTnl1LmV5P\/dQJhQV+xgcjcRmO5o=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -473,5 +473,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "3W7DZgky"
+  "version": "sC2yWWnW"
 };
