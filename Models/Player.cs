@@ -10,6 +10,18 @@ namespace MythrasCharacterGenerator.Models
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; }
         public string PlayerName { get; set; }
+        public string Culture { get; set; }
+        public string Gender { get; set; }
+        public string Frame { get; set; }
+        public string Homeland { get; set; }
+        public string Age { get; set; }
+        public string Height { get; set; }
+        public string  Career { get; set; }
+        public string Handedness { get; set; }
+        public string Weight { get; set; }
+        public string  SocialClass { get; set; }
+        public string Description { get; set; }
+
         public DateTime CreationDate { get; set; } = DateTime.UtcNow;
         public DateTime ModifiedDate { get; set; }
         public Characteristics Characteristics { get; set; } = new();

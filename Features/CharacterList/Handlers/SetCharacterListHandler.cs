@@ -18,8 +18,8 @@ namespace MythrasCharacterGenerator.Features.CharacterList
 
             public override Task<Unit> Handle(SetCharacterListAction aAction, CancellationToken aCancellationToken)
             {
-                CharacterListState.SavedList = aAction.storedList;
-
+                CharacterListState.SavedList = aAction.storedList.OrderByDescending(s=> s.ModifiedDate).ToList();
+                CharacterListState.UpdatedList?.Invoke();
                 return Unit.Task;
             }
         }

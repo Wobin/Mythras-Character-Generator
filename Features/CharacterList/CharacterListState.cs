@@ -15,5 +15,6 @@ namespace MythrasCharacterGenerator.Features.CharacterList
     {        
         public List<Player> SavedList { get; private set; }
         public override void Initialize() => SavedList = new();
+        public event Action UpdatedList;
     }
 }

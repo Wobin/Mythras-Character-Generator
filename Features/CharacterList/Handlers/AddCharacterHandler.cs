@@ -30,6 +30,7 @@ namespace MythrasCharacterGenerator.Features.CharacterList
                 aAction.NewPlayer.ModifiedDate = DateTime.UtcNow;
 
                 CharacterListState.SavedList.Add(aAction.NewPlayer);
+                CharacterListState.SavedList = CharacterListState.SavedList.OrderByDescending(s => s.ModifiedDate).ToList();
                 LocalStorage.SetItemAsync("StoredCharacterSheets", CharacterListState.SavedList);
                 return Unit.Task;
             }

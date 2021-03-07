@@ -1,4 +1,5 @@
-﻿using BlazorState;
+﻿using Blazored.LocalStorage;
+using BlazorState;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,16 +13,23 @@ namespace MythrasCharacterGenerator.Features.CharacterList
     {
         public class DeleteCharacterHandler : ActionHandler<DeleteCharacterAction>
         {
-            public DeleteCharacterHandler(IStore aStore) : base(aStore) { }
+            private ILocalStorageService LocalStorage;
+            public DeleteCharacterHandler(IStore aStore, ILocalStorageService localStorage) : base(aStore) 
+            {
+                LocalStorage = localStorage;
+            }
 
             CharacterListState CharacterListState => Store.GetState<CharacterListState>();
 
-            public override Task<Unit> Handle(DeleteCharacterAction aAction, CancellationToken aCancellationToken)
+            public override async Task<Unit> Handle(DeleteCharacterAction aAction, CancellationToken aCancellationToken)
             {
                 var oldRecord = CharacterListState.SavedList.Where(s => s.Id == aAction.PlayerId).FirstOrDefault();
                 if (oldRecord != null) CharacterListState.SavedList.Remove(oldRecord);
 
-                return Unit.Task;
+                CharacterListState.SavedList = CharacterListState.SavedList.OrderByDescending(s => s.ModifiedDate).ToList();
+
+                await LocalStorage.SetItemAsync("StoredCharacterSheets", CharacterListState.SavedList);
+                return new Unit();
             }
         }
     }

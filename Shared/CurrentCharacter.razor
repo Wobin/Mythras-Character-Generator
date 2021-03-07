@@ -1,28 +1,96 @@
 ﻿@inherits BlazorStateComponent
-<RadzenCard Style="width:600px; margin-bottom: 20px; height:500px;">
     <div class="row">
-        <div class="col-md-12">
-            <div>Character Name:</div>
-            <RadzenTextBox @bind-Value="ActiveCharacter.Name"></RadzenTextBox>
+        <div class="col-8">
+            <RadzenCard Style="margin-bottom: 20px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>Character Name:</div>
+                        <RadzenTextBox Style="width:100%; display: block"  @bind-Value="ActiveCharacter.Name"></RadzenTextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="margin-top:20px">Player Name:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.PlayerName"></RadzenTextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="margin-top:20px">Race/Culture:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.Culture"></RadzenTextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Gender:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.Gender"></RadzenTextBox>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Frame:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.Frame"></RadzenTextBox>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Homeland:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.Homeland"></RadzenTextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Age:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.Age"></RadzenTextBox>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Height:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.Height"></RadzenTextBox>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Career:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.Career"></RadzenTextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Handedness:</div>
+                        <RadzenSelectBar @bind-Value=@ActiveCharacter.Handedness TValue="String">
+                            <Items>
+                                <RadzenSelectBarItem Text="Left" Value="@("Left")"  Style="font-size:smaller;  padding-left:10px;padding-right:10px" />
+                                <RadzenSelectBarItem Text="Right" Value="@("Right")" Style="font-size:smaller; padding-left:10px;padding-right:10px" />
+                                <RadzenSelectBarItem Text="Ambi" Value="@("Ambi")" Style="font-size:smaller;   padding-left:10px;padding-right:10px" />
+                            </Items>
+                        </RadzenSelectBar>                        
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Weight:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.Weight"></RadzenTextBox>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top:20px">Social Class:</div>
+                        <RadzenTextBox @bind-Value="ActiveCharacter.SocialClass"></RadzenTextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>Description:</div>
+                        <RadzenTextArea Rows="4" Style="width:100%; display: block" @bind-Value="ActiveCharacter.Description" />
+                    </div>
+                </div>
+            </RadzenCard>
+        </div>
+        <div class="col-4">
+            <RadzenImage Path="images/MythrasLogo.png" Style="width:100%; display: block"  />
+            <RadzenCard>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>Experience Rolls:</div>
+                        </div>
+                    </div>
+                
+            </RadzenCard>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div style="margin-top:20px">Player Name:</div>
-            <RadzenTextBox @bind-Value="ActiveCharacter.PlayerName"></RadzenTextBox>
-            
-            
-        </div>
-        <div class="col-md-6">
-            
-        </div>
-    </div>    
-</RadzenCard>
-<RadzenButton Click=@(args => SaveCharacter(ActiveCharacter)) Text="Save Character" Icon="person_remove" Style="margin-bottom: 20px; width: 150px" />
-@code {
-    Player ActiveCharacter => GetState<ActiveCharacterState>().ActiveCharacter;
-    protected async Task SaveCharacter(Player activeCharacter)
-    {
-        await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = activeCharacter });
+    <RadzenButton Click=@(args => SaveCharacter(ActiveCharacter)) Text="Save Character" Icon="person_remove" Style="margin-bottom: 20px; width: 150px" />
+    @code {
+        Player ActiveCharacter => GetState<ActiveCharacterState>().ActiveCharacter;
+        protected async Task SaveCharacter(Player activeCharacter)
+        {
+            await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = activeCharacter });
+        }
     }
-}
