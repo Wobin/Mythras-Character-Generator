@@ -86,11 +86,56 @@
             </RadzenCard>
         </div>
     </div>
-    <RadzenButton Click=@(args => SaveCharacter(ActiveCharacter)) Text="Save Character" Icon="person_remove" Style="margin-bottom: 20px; width: 150px" />
-    @code {
-        Player ActiveCharacter => GetState<ActiveCharacterState>().ActiveCharacter;
-        protected async Task SaveCharacter(Player activeCharacter)
-        {
-            await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = activeCharacter });
+    <div class="row no-gutters">
+        <div class="col-8">
+            <RadzenPanel AllowCollapse="false" Style="width:100%" >
+                <HeaderTemplate>
+                    <span style="flex:1;">
+                        <RadzenIcon Icon="text_snippet" /><b style="font-size:18px">Notes (Background, Culture, Family...):</b>
+                    </span>
+                </HeaderTemplate>
+                <ChildContent>
+                    <RadzenCard>
+                        <div class="col-md-12">
+                            <RadzenTextArea Rows="6" Style="width:100%; display: block" @bind-Value="ActiveCharacter.Description" />
+                        </div>
+                        </RadzenCard>
+                </ChildContent>
+                </RadzenPanel>
+        </div>
+        <div class="col-4">
+            <RadzenPanel AllowCollapse="false" Style="width:100%; padding-left:0px">
+                <HeaderTemplate >
+                    <span style="flex:1;">
+                        <RadzenIcon Icon="account_balance"/><b style="font-size:18px">Money &amp; Wealth</b>
+                    </span>
+                </HeaderTemplate>
+                <ChildContent>
+                    <RadzenCard>
+                        <div class="row" style="font-weight:bolder">
+                            <div class="col-3">Income</div>
+                            <div class="col-2" style="font-size:x-small">day</div>
+                            <div class="col-2" style="font-size:x-small">week</div>
+                            <div class="col-3" style="font-size:x-small">season</div>
+                            <div class="col-2" style="font-size:x-small">year</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">Silver Pieces</div>
+                            <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
+                            <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
+                            <div class="col-3" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
+                            <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
+                        </div>
+                    </RadzenCard>
+                </ChildContent>
+            </RadzenPanel>
+        </div>
+    </div>
+        <RadzenButton Click=@(args => SaveCharacter(ActiveCharacter)) Text="Save Character" Icon="person_remove" Style="margin-bottom: 20px; width: 150px" />
+        @code {
+            Player ActiveCharacter => GetState<ActiveCharacterState>().ActiveCharacter;
+            protected async Task SaveCharacter(Player activeCharacter)
+            {
+                await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = activeCharacter });
+            }
         }
-    }
