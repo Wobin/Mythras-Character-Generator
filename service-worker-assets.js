@@ -61,7 +61,7 @@
       "url": "images\/MythrasLogo.png"
     },
     {
-      "hash": "sha256-ONv8xrncdBFBtLD6M39juqqVFBYohvY\/\/07ll7lX\/cc=",
+      "hash": "sha256-nQI8CZrCOS1LC\/xE4zL6B2ydnY5ND8i6WCcrgFGxuEk=",
       "url": "index.html"
     },
     {
@@ -309,7 +309,7 @@
       "url": "_framework\/TypeSupport.dll"
     },
     {
-      "hash": "sha256-9imnFGmLyezWULNvEA6w2ZKJyfYuxKQg3dIRTjTDQEc=",
+      "hash": "sha256-\/nK0Zg5U2uTEi6d1WEx0BHhTi3uTwuxduaw3t6uTyCE=",
       "url": "_framework\/MythrasCharacterGenerator.dll"
     },
     {
@@ -469,7 +469,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-nLiq3Gwl5HUh\/dwjywjzTBm3KixfQTgsM1cJnbuOOHc=",
+      "hash": "sha256-0gw2aWYriU7D72\/UHN1a8MMw7hp\/4d2CbF+xXKk08ao=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -477,5 +477,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "spA9rW32"
+  "version": "oVq4QQty"
 };
