@@ -1,5 +1,28 @@
-﻿<h3>CurrentCharacter</h3>
-
+﻿@inherits BlazorStateComponent
+<RadzenCard Style="width:600px; margin-bottom: 20px; height:500px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div>Character Name:</div>
+            <RadzenTextBox @bind-Value="ActiveCharacter.Name"></RadzenTextBox>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div style="margin-top:20px">Player Name:</div>
+            <RadzenTextBox @bind-Value="ActiveCharacter.PlayerName"></RadzenTextBox>
+            
+            
+        </div>
+        <div class="col-md-6">
+            
+        </div>
+    </div>    
+</RadzenCard>
+<RadzenButton Click=@(args => SaveCharacter(ActiveCharacter)) Text="Save Character" Icon="person_remove" Style="margin-bottom: 20px; width: 150px" />
 @code {
-
+    Player ActiveCharacter => GetState<ActiveCharacterState>().ActiveCharacter;
+    protected async Task SaveCharacter(Player activeCharacter)
+    {
+        await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = activeCharacter });
+    }
 }

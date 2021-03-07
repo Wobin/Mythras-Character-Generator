@@ -9,6 +9,7 @@ namespace MythrasCharacterGenerator.Models
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; }
+        public string PlayerName { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.UtcNow;
         public DateTime ModifiedDate { get; set; }
         public Characteristics Characteristics { get; set; } = new();

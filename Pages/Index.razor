@@ -1,6 +1,44 @@
 ﻿@page "/"
+@inherits BlazorStateComponent
 
 <h1>Mythras Character Creation</h1>
-<NewCharacter />
-<SavedCharacters />
 
+<RadzenPanel AllowCollapse="true">
+    <HeaderTemplate>
+        <span style="float:left;">
+            <RadzenIcon Icon="account_box" /><b style="font-size:30px">New Character</b>
+        </span>
+    </HeaderTemplate>
+    <ChildContent>
+        <NewCharacter />
+    </ChildContent>
+</RadzenPanel>
+<RadzenPanel AllowCollapse="true">
+    <HeaderTemplate>
+        <span style="float:left;">
+            <RadzenIcon Icon="account_box" /><b style="font-size:30px">Saved Character</b>
+        </span>
+    </HeaderTemplate>
+    <ChildContent>
+        <SavedCharacters />
+    </ChildContent>
+</RadzenPanel>
+
+@if (HasActiveCharacter)
+{
+    <RadzenPanel AllowCollapse="true">
+        <HeaderTemplate>
+            <span style="float:left;">
+                <RadzenIcon Icon="account_box" /><b style="font-size:30px">Current Character</b>
+            </span>
+        </HeaderTemplate>
+        <ChildContent>
+            <CurrentCharacter />
+        </ChildContent>
+    </RadzenPanel>
+
+
+}
+@code{
+    bool HasActiveCharacter => GetState<ActiveCharacterState>().ActiveCharacter != null;
+}

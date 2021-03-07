@@ -1,5 +1,7 @@
-﻿using BlazorState;
+﻿using Blazored.LocalStorage;
+using BlazorState;
 using MediatR;
+using MythrasCharacterGenerator.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,11 @@ namespace MythrasCharacterGenerator.Features.CharacterList
     {
         public class AddCharacterHandler : ActionHandler<AddCharacterAction>
         {
-            public AddCharacterHandler(IStore aStore) : base(aStore) { }
+            private ILocalStorageService LocalStorage;
+            public AddCharacterHandler(IStore aStore, ILocalStorageService  localStorage) : base(aStore) 
+            {
+                LocalStorage = localStorage;
+            }
 
             CharacterListState CharacterListState => Store.GetState<CharacterListState>();
 
@@ -24,7 +30,7 @@ namespace MythrasCharacterGenerator.Features.CharacterList
                 aAction.NewPlayer.ModifiedDate = DateTime.UtcNow;
 
                 CharacterListState.SavedList.Add(aAction.NewPlayer);
-
+                LocalStorage.SetItemAsync("StoredCharacterSheets", CharacterListState.SavedList);
                 return Unit.Task;
             }
         }

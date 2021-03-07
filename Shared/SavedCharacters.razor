@@ -1,7 +1,6 @@
 ﻿@inject ILocalStorageService  LocalStorageService;
 @inherits BlazorStateComponent
 
-<h3>Saved Characters</h3>
 <RadzenAccordion>
     <Items>
         @foreach (var character in CharacterList)
@@ -18,7 +17,7 @@
 
     CharacterListState CharacterListState => GetState<CharacterListState>();
 
-    public List<Player> CharacterList => CharacterListState.SavedList ?? new();
+    public List<Player> CharacterList => CharacterListState.SavedList.OrderByDescending(s => s.ModifiedDate).ToList() ?? new();
 
 
     protected async override Task OnInitializedAsync()
@@ -32,8 +31,8 @@
         await Mediator.Send(new CharacterListState.DeleteCharacterAction { PlayerId = playerId });
     }
 
-    protected void LoadCharacter(Player player)
+    protected async Task LoadCharacter(Player player)
     {
-
+        await Mediator.Send(new ActiveCharacterState.SetActiveCharacterAction { TargetPlayer = player });
     }
 }
