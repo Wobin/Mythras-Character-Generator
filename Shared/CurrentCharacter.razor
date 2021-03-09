@@ -1,136 +1,190 @@
 ﻿@inherits BlazorStateComponent
-    <div class="row">
-        <div class="col-8">
-            <RadzenCard Style="margin-bottom: 20px;">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div>Character Name:</div>
-                        <RadzenTextBox Style="width:100%; display: block"  @bind-Value="ActiveCharacter.Name"></RadzenTextBox>
-                    </div>
+<div class="row">
+    <div class="col-8">
+        <RadzenCard Style="margin-bottom: 20px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>Character Name:</div>
+                    <RadzenTextBox Style="width:100%; display: block" @bind-Value="ActiveCharacter.Name"></RadzenTextBox>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div style="margin-top:20px">Player Name:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.PlayerName"></RadzenTextBox>
-                    </div>
-                    <div class="col-md-6">
-                        <div style="margin-top:20px">Race/Culture:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.Culture"></RadzenTextBox>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="margin-top:20px">Player Name:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.PlayerName"></RadzenTextBox>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Gender:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.Gender"></RadzenTextBox>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Frame:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.Frame"></RadzenTextBox>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Homeland:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.Homeland"></RadzenTextBox>
-                    </div>
+                <div class="col-md-6">
+                    <div style="margin-top:20px">Race/Culture:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.Culture"></RadzenTextBox>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Age:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.Age"></RadzenTextBox>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Height:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.Height"></RadzenTextBox>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Career:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.Career"></RadzenTextBox>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Gender:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.Gender"></RadzenTextBox>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Handedness:</div>
-                        <RadzenSelectBar @bind-Value=@ActiveCharacter.Handedness TValue="String">
-                            <Items>
-                                <RadzenSelectBarItem Text="Left" Value="@("Left")"  Style="font-size:smaller;  padding-left:10px;padding-right:10px" />
-                                <RadzenSelectBarItem Text="Right" Value="@("Right")" Style="font-size:smaller; padding-left:10px;padding-right:10px" />
-                                <RadzenSelectBarItem Text="Ambi" Value="@("Ambi")" Style="font-size:smaller;   padding-left:10px;padding-right:10px" />
-                            </Items>
-                        </RadzenSelectBar>                        
-                    </div>
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Weight:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.Weight"></RadzenTextBox>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="margin-top:20px">Social Class:</div>
-                        <RadzenTextBox @bind-Value="ActiveCharacter.SocialClass"></RadzenTextBox>
-                    </div>
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Frame:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.Frame"></RadzenTextBox>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div>Description:</div>
-                        <RadzenTextArea Rows="4" Style="width:100%; display: block" @bind-Value="ActiveCharacter.Description" />
-                    </div>
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Homeland:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.Homeland"></RadzenTextBox>
                 </div>
-            </RadzenCard>
-        </div>
-        <div class="col-4">
-            <RadzenImage Path="images/MythrasLogo.png" Style="width:100%; display: block"  />
-            <RadzenCard>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div>Experience Rolls:</div>
-                        </div>
-                    </div>
-                
-            </RadzenCard>
-        </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Age:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.Age"></RadzenTextBox>
+                </div>
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Height:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.Height"></RadzenTextBox>
+                </div>
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Career:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.Career"></RadzenTextBox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Handedness:</div>
+                    <RadzenSelectBar @bind-Value=@ActiveCharacter.Handedness TValue="String">
+                        <Items>
+                            <RadzenSelectBarItem Text="Left" Value="@("Left")" Style="font-size:smaller;  padding-left:10px;padding-right:10px" />
+                            <RadzenSelectBarItem Text="Right" Value="@("Right")" Style="font-size:smaller; padding-left:10px;padding-right:10px" />
+                            <RadzenSelectBarItem Text="Ambi" Value="@("Ambi")" Style="font-size:smaller;   padding-left:10px;padding-right:10px" />
+                        </Items>
+                    </RadzenSelectBar>
+                </div>
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Weight:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.Weight"></RadzenTextBox>
+                </div>
+                <div class="col-md-4">
+                    <div style="margin-top:20px">Social Class:</div>
+                    <RadzenTextBox @bind-Value="ActiveCharacter.SocialClass"></RadzenTextBox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div>Description:</div>
+                    <RadzenTextArea Rows="4" Style="width:100%; display: block" @bind-Value="ActiveCharacter.Description" />
+                </div>
+            </div>
+        </RadzenCard>
     </div>
-    <div class="row no-gutters">
-        <div class="col-8">
-            <RadzenPanel AllowCollapse="false" Style="width:100%" >
-                <HeaderTemplate>
-                    <span style="flex:1;">
-                        <RadzenIcon Icon="text_snippet" /><b style="font-size:18px">Notes (Background, Culture, Family...):</b>
-                    </span>
-                </HeaderTemplate>
-                <ChildContent>
-                    <RadzenCard>
-                        <div class="col-md-12">
-                            <RadzenTextArea Rows="6" Style="width:100%; display: block" @bind-Value="ActiveCharacter.Description" />
-                        </div>
-                        </RadzenCard>
-                </ChildContent>
-                </RadzenPanel>
-        </div>
-        <div class="col-4">
-            <RadzenPanel AllowCollapse="false" Style="width:100%; padding-left:0px">
-                <HeaderTemplate >
-                    <span style="flex:1;">
-                        <RadzenIcon Icon="account_balance"/><b style="font-size:18px">Money &amp; Wealth</b>
-                    </span>
-                </HeaderTemplate>
-                <ChildContent>
-                    <RadzenCard>
-                        <div class="row" style="font-weight:bolder">
-                            <div class="col-3">Income</div>
-                            <div class="col-2" style="font-size:x-small">day</div>
-                            <div class="col-2" style="font-size:x-small">week</div>
-                            <div class="col-3" style="font-size:x-small">season</div>
-                            <div class="col-2" style="font-size:x-small">year</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">Silver Pieces</div>
-                            <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
-                            <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
-                            <div class="col-3" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
-                            <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
-                        </div>
-                    </RadzenCard>
-                </ChildContent>
-            </RadzenPanel>
-        </div>
+    <div class="col-4">
+        <RadzenImage Path="images/MythrasLogo.png" Style="width:100%; display: block" />
+        <RadzenCard>
+            <div class="row">
+                <div class="col-md-12">
+                    <div>Experience Rolls:</div>
+                </div>
+            </div>
+
+        </RadzenCard>
     </div>
+</div>
+<div class="row no-gutters">
+    <div class="col-8">
+        <RadzenPanel AllowCollapse="false" Style="width:100%">
+            <HeaderTemplate>
+                <span style="flex:1;">
+                    <RadzenIcon Icon="text_snippet" /><b style="font-size:18px">Notes (Background, Culture, Family...):</b>
+                </span>
+            </HeaderTemplate>
+            <ChildContent>
+                <RadzenCard>
+                    <div class="col-md-12">
+                        <RadzenTextArea Rows="6" Style="width:100%; display: block" @bind-Value="ActiveCharacter.Description" />
+                    </div>
+                </RadzenCard>
+            </ChildContent>
+        </RadzenPanel>
+    </div>
+    <div class="col-4">
+        <RadzenPanel AllowCollapse="false" Style="width:100%; padding-left:0px">
+            <HeaderTemplate>
+                <span style="flex:1;">
+                    <RadzenIcon Icon="account_balance" /><b style="font-size:18px">Money &amp; Wealth</b>
+                </span>
+            </HeaderTemplate>
+            <ChildContent>
+                <RadzenCard>
+                    <div class="row" style="font-weight:bolder">
+                        <div class="col-3">Income</div>
+                        <div class="col-2" style="font-size:x-small">day</div>
+                        <div class="col-2" style="font-size:x-small">week</div>
+                        <div class="col-3" style="font-size:x-small">season</div>
+                        <div class="col-2" style="font-size:x-small">year</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">Silver Pieces</div>
+                        <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
+                        <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
+                        <div class="col-3" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
+                        <div class="col-2" Style="padding:0; font-size:x-small"><RadzenNumeric TValue="int" Style="width:100%" /></div>
+                    </div>
+                </RadzenCard>
+            </ChildContent>
+        </RadzenPanel>
+    </div>
+</div>  <div class="row no-gutters">
+    <div class="col-8">
+        <RadzenPanel AllowCollapse="false" Style="width:100%">
+            <HeaderTemplate>
+                <span style="flex:1;">
+                    <RadzenIcon Icon="insert_chart" /><b style="font-size:18px">Characteristics &amp; Attributes</b>
+                </span>
+            </HeaderTemplate>
+            <ChildContent>
+                <RadzenCard>
+                    <div class="row">
+                        <div class="col-6 statBar">
+                            <span>@ActiveCharacter.Characteristics.Strength._type.ToString()</span>
+                            <input type="text" class="max-characteristic" @bind-value="ActiveCharacter.Characteristics.Strength.Value" />
+                            <input type="text" class="current-characteristic" @bind-value="ActiveCharacter.Characteristics.Strength.Current" />
+                        </div>
+                        <div class="col-6 attrBar">
+                            <span>Action Points</span>
+                            <input type="text" class="max-characteristic" @bind-value="ActiveCharacter.ActionPoints" />
+                            <input type="text" class="current-characteristic" @bind-value="ActiveCharacter.ActionPointsCurrent" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 statBar">
+                            <span>@ActiveCharacter.Characteristics.Constitution._type.ToString()</span>
+                            <input type="text" class="max-characteristic" @bind-value="ActiveCharacter.Characteristics.Constitution.Value" />
+                            <input type="text" class="current-characteristic" @bind-value="ActiveCharacter.Characteristics.Constitution.Current" />
+                        </div>
+                        <div class="col-6 attrBar">
+                            <span>Damage Modifier</span>
+                            <input type="text" class="max-characteristic" value="@(ActiveCharacter.DamageModifier.ToString())" />
+                            <input type="text" class="current-characteristic" @bind-value="ActiveCharacter.DamageModifierCurrent" />
+                        </div>
+                    </div>
+                </RadzenCard>
+                    </ChildContent>
+            
+        </RadzenPanel>
+        </div>
+    <div class="col-4">
+        <RadzenPanel AllowCollapse="false" Style="width:100%; padding-left:0px">
+            <HeaderTemplate>
+                <span style="flex:1;">
+                    <RadzenIcon Icon="settings_accessibility" /><b style="font-size:18px">Cult Infomation</b>
+                </span>
+            </HeaderTemplate>
+            <ChildContent>
+                <RadzenCard>
+                 
+                </RadzenCard>
+            </ChildContent>
+        </RadzenPanel>
+    </div>
+    </div>
+
         <RadzenButton Click=@(args => SaveCharacter(ActiveCharacter)) Text="Save Character" Icon="person_remove" Style="margin-bottom: 20px; width: 150px" />
         @code {
             Player ActiveCharacter => GetState<ActiveCharacterState>().ActiveCharacter;

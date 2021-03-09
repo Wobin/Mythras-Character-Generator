@@ -48,3 +48,49 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+.statBar{
+    background-image: url('../images/statBar.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 65px;
+}
+
+    .statBar span {
+        color: antiquewhite;
+        top: 1em;
+        position: relative;
+    }
+.attrBar {
+    background-image: url("../images/attrBar.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 65px;
+}
+.max-characteristic {
+    width: 2em;
+    text-align: center;
+    float: right;
+    position: relative;
+    top: 1em;
+    right: 4.45em;    
+    border: transparent;
+    vertical-align: middle;
+}
+.max-characteristic:focus {
+    outline: none;
+}
+.current-characteristic {    
+    width: 2em;
+    text-align: center;
+    float: right;
+    position: relative;
+    top: 1em;
+    right: -1.7em;
+    border: transparent;
+    vertical-align: middle;
+}
+
+.current-characteristic:focus{
+    outline:none;
+}

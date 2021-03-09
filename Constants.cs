@@ -35,13 +35,13 @@ namespace MythrasCharacterGenerator
             RaceName = "Human",
             DicePool = new()
             {
-                { Characteristics.Strength, new() { Dice = new() { Dice.d6, Dice.d6, Dice.d6 } } },
-                { Characteristics.Constitution, new() { Dice = new() { Dice.d6, Dice.d6, Dice.d6 } } },
-                { Characteristics.Dexterity, new() { Dice = new() { Dice.d6, Dice.d6, Dice.d6 } } },
-                { Characteristics.Power, new() { Dice = new() { Dice.d6, Dice.d6, Dice.d6 } } },
-                { Characteristics.Charisma, new() { Dice = new() { Dice.d6, Dice.d6, Dice.d6 } } },
-                { Characteristics.Size, new() { Dice = new() { Dice.d6, Dice.d6 }, Flat = 6 } },
-                { Characteristics.Intelligence, new() { Dice = new() { Dice.d6, Dice.d6 }, Flat = 6 } },
+                { Characteristics.Strength, new()       { Dice = new() { Die.d6, Die.d6, Die.d6 } } },
+                { Characteristics.Constitution, new()   { Dice = new() { Die.d6, Die.d6, Die.d6 } } },
+                { Characteristics.Dexterity, new()      { Dice = new() { Die.d6, Die.d6, Die.d6 } } },
+                { Characteristics.Power, new()          { Dice = new() { Die.d6, Die.d6, Die.d6 } } },
+                { Characteristics.Charisma, new()       { Dice = new() { Die.d6, Die.d6, Die.d6 } } },
+                { Characteristics.Size, new()           { Dice = new() { Die.d6, Die.d6 }, Flat = 6 } },
+                { Characteristics.Intelligence, new()   { Dice = new() { Die.d6, Die.d6 }, Flat = 6 } },
             },
             BodyParts = new() { BodyParts.Head, BodyParts.Abdomen, BodyParts.Chest, BodyParts.LeftArm, BodyParts.RightArm, BodyParts.LeftLeg, BodyParts.RightLeg },
             BaseMovementRate = 6

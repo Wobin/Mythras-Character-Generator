@@ -27,29 +27,31 @@ namespace MythrasCharacterGenerator.Models
         public Characteristics Characteristics { get; set; } = new();
         public RaceTemplate Race { get; set; } = Constants.Human;
         public int ActionPoints { get; set; } = 2;
+        public int ActionPointsCurrent { get; set; }
         public DicePool DamageModifier { get {
                 return (Characteristics.Strength.Value + Characteristics.Size.Value) switch
                 {
-                    <= 5   => new() { PenaltyDice = new() { Dice.d8 } },
-                    <= 10  => new() { PenaltyDice = new() { Dice.d6 } },
-                    <= 15  => new() { PenaltyDice = new() { Dice.d4 } },
-                    <= 20  => new() { PenaltyDice = new() { Dice.d2 } },
+                    <= 5   => new() { PenaltyDice = new() { Die.d8 } },
+                    <= 10  => new() { PenaltyDice = new() { Die.d6 } },
+                    <= 15  => new() { PenaltyDice = new() { Die.d4 } },
+                    <= 20  => new() { PenaltyDice = new() { Die.d2 } },
                     <= 25  => new() {                                 },
-                    <= 30  => new() { Dice = new() { Dice.d2 } },
-                    <= 35  => new() { Dice = new() { Dice.d4 } },
-                    <= 40  => new() { Dice = new() { Dice.d6 } },
-                    <= 45  => new() { Dice = new() { Dice.d8 } },
-                    <= 50  => new() { Dice = new() { Dice.d10 } },
-                    <= 60  => new() { Dice = new() { Dice.d12 } },
-                    <= 70  => new() { Dice = new() { Dice.d6, Dice.d6 } },
-                    <= 80  => new() { Dice = new() { Dice.d8, Dice.d6 } },
-                    <= 90  => new() { Dice = new() { Dice.d8, Dice.d8 } },
-                    <= 100 => new() { Dice = new() { Dice.d10, Dice.d8 } },
-                    <= 110 => new() { Dice = new() { Dice.d10, Dice.d10 } },
-                    <= 120 => new() { Dice = new() { Dice.d10, Dice.d10, Dice.d2 } },
-                    _ => new() { Dice = new() { Dice.d10, Dice.d10, Dice.d8 } }, // TODO No idea how to extend this, there's no obvious progression
+                    <= 30  => new() { Dice = new() { Die.d2 } },
+                    <= 35  => new() { Dice = new() { Die.d4 } },
+                    <= 40  => new() { Dice = new() { Die.d6 } },
+                    <= 45  => new() { Dice = new() { Die.d8 } },
+                    <= 50  => new() { Dice = new() { Die.d10 } },
+                    <= 60  => new() { Dice = new() { Die.d12 } },
+                    <= 70  => new() { Dice = new() { Die.d6, Die.d6 } },
+                    <= 80  => new() { Dice = new() { Die.d8, Die.d6 } },
+                    <= 90  => new() { Dice = new() { Die.d8, Die.d8 } },
+                    <= 100 => new() { Dice = new() { Die.d10, Die.d8 } },
+                    <= 110 => new() { Dice = new() { Die.d10, Die.d10 } },
+                    <= 120 => new() { Dice = new() { Die.d10, Die.d10, Die.d2 } },
+                    _ => new() { Dice = new() { Die.d10, Die.d10, Die.d4 } }, // TODO No idea how to extend this, there's no obvious progression
                 };
             }  }
+        public string DamageModifierCurrent { get; set; }
         public int ExperienceModifier { get {
                 return Characteristics.Charisma.Value switch
                 {
