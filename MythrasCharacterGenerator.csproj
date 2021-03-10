@@ -19,8 +19,8 @@
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Debug xcopy /Y $(TargetDir)\MythrasCharacterGenerator.* $(SolutionDir)\.vs\MythrasCharacterGenerator\v16\lut\0\i\MythrasCharacterGenerator\net5.0\" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug' " >
+    <Exec Command="xcopy /Y $(TargetDir)\MythrasCharacterGenerator.* $(SolutionDir)\.vs\MythrasCharacterGenerator\v16\lut\0\i\MythrasCharacterGenerator\net5.0\" />
   </Target>
 
 </Project>
