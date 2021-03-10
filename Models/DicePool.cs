@@ -7,6 +7,11 @@ namespace MythrasCharacterGenerator.Models
 {
     public class DicePool
     {
+        public DicePool(string title = null)
+        {
+            Title = title;
+        }
+        public string Title { get; set; }
         public List<Die> Dice { get; set; } = new();
         public List<Die> PenaltyDice { get; set; } = new();
         public int Flat { get; set; }
@@ -24,10 +29,8 @@ namespace MythrasCharacterGenerator.Models
         }
 
         
-        public string GetRange()
-        {
-          return $"{(PenaltyDice.Any() ?"-":"")}{Low}-{High}";
-        }
+        public string GetRange =>  $"{(PenaltyDice.Any() ?"-":"")}{Low}-{High}";
+        
     }
 
     public static class Extensions

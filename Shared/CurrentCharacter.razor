@@ -160,8 +160,8 @@
                         </div>
                         <div class="col-6 attrBar">
                             <span>Damage Modifier</span>
-                            <input type="text" class="max-characteristic" value="@(ActiveCharacter.DamageModifier.ToString())" />
-                            <input type="text" class="current-characteristic" @bind-value="ActiveCharacter.DamageModifierCurrent" />
+                            <input type="text" class="max-characteristic" value="@(ActiveCharacter.DamageModifier.GetRange)" />
+                            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=@(args => PopDicePool(ActiveCharacter.DamageModifier))/>
                         </div>
                     </div>
                 </RadzenCard>
@@ -186,10 +186,17 @@
     </div>
 
         <RadzenButton Click=@(args => SaveCharacter(ActiveCharacter)) Text="Save Character" Icon="person_remove" Style="margin-bottom: 20px; width: 150px" />
-        @code {
+@code {
             Player ActiveCharacter => GetState<ActiveCharacterState>().ActiveCharacter;
             protected async Task SaveCharacter(Player activeCharacter)
             {
                 await Mediator.Send(new CharacterListState.AddCharacterAction { NewPlayer = activeCharacter });
+            }
+
+            protected DicePool TargetPool { get; set; }
+
+            protected async Task PopDicePool(DicePool targetPool)
+            {
+                await Mediator.Send(new DiceBoxState.SetActiveDiceBoxAction { TargetPool = targetPool });
             }
         }

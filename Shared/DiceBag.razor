@@ -1,0 +1,26 @@
+﻿@inherits BlazorStateComponent
+
+<div class="jobs-container">
+    <CascadingValue Value="this">
+        @ChildContent
+    </CascadingValue>
+</div>
+
+@code {
+    [Parameter] public List<Die> Jobs { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public EventCallback<Die> OnStatusUpdated { get; set; }
+
+    public DiceBoxState TargetDiceBoxState => GetState<DiceBoxState>();
+    public DicePool Pool => TargetDiceBoxState.TargetPool;
+
+
+    public Die Payload { get; set; }
+
+    public async Task UpdateJobAsync(Die newStatus)
+    {
+        await OnStatusUpdated.InvokeAsync(Payload);        
+    }
+}
+
+}

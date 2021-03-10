@@ -94,3 +94,14 @@ a, .btn-link {
 .current-characteristic:focus{
     outline:none;
 }
+
+.dicebox {
+    width: 600px;
+    margin-bottom: 20px;
+    height: 500px;
+    position: absolute;
+    background-color: antiquewhite;
+    border:groove;
+    border-width : 1px;
+    z-index: 1;
+}

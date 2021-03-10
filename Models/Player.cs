@@ -31,24 +31,24 @@ namespace MythrasCharacterGenerator.Models
         public DicePool DamageModifier { get {
                 return (Characteristics.Strength.Value + Characteristics.Size.Value) switch
                 {
-                    <= 5   => new() { PenaltyDice = new() { Die.d8 } },
-                    <= 10  => new() { PenaltyDice = new() { Die.d6 } },
-                    <= 15  => new() { PenaltyDice = new() { Die.d4 } },
-                    <= 20  => new() { PenaltyDice = new() { Die.d2 } },
-                    <= 25  => new() {                                 },
-                    <= 30  => new() { Dice = new() { Die.d2 } },
-                    <= 35  => new() { Dice = new() { Die.d4 } },
-                    <= 40  => new() { Dice = new() { Die.d6 } },
-                    <= 45  => new() { Dice = new() { Die.d8 } },
-                    <= 50  => new() { Dice = new() { Die.d10 } },
-                    <= 60  => new() { Dice = new() { Die.d12 } },
-                    <= 70  => new() { Dice = new() { Die.d6, Die.d6 } },
-                    <= 80  => new() { Dice = new() { Die.d8, Die.d6 } },
-                    <= 90  => new() { Dice = new() { Die.d8, Die.d8 } },
-                    <= 100 => new() { Dice = new() { Die.d10, Die.d8 } },
-                    <= 110 => new() { Dice = new() { Die.d10, Die.d10 } },
-                    <= 120 => new() { Dice = new() { Die.d10, Die.d10, Die.d2 } },
-                    _ => new() { Dice = new() { Die.d10, Die.d10, Die.d4 } }, // TODO No idea how to extend this, there's no obvious progression
+                    <= 5   => new("Damage Modifier") { PenaltyDice = new() { Die.d8 } },
+                    <= 10  => new("Damage Modifier") { PenaltyDice = new() { Die.d6 } },
+                    <= 15  => new("Damage Modifier") { PenaltyDice = new() { Die.d4 } },
+                    <= 20  => new("Damage Modifier") { PenaltyDice = new() { Die.d2 } },
+                    <= 25  => new("Damage Modifier") {                                 },
+                    <= 30  => new("Damage Modifier") { Dice = new() { Die.d2 } },
+                    <= 35  => new("Damage Modifier") { Dice = new() { Die.d4 } },
+                    <= 40  => new("Damage Modifier") { Dice = new() { Die.d6 } },
+                    <= 45  => new("Damage Modifier") { Dice = new() { Die.d8 } },
+                    <= 50  => new("Damage Modifier") { Dice = new() { Die.d10 } },
+                    <= 60  => new("Damage Modifier") { Dice = new() { Die.d12 } },
+                    <= 70  => new("Damage Modifier") { Dice = new() { Die.d6, Die.d6 } },
+                    <= 80  => new("Damage Modifier") { Dice = new() { Die.d8, Die.d6 } },
+                    <= 90  => new("Damage Modifier") { Dice = new() { Die.d8, Die.d8 } },
+                    <= 100 => new("Damage Modifier") { Dice = new() { Die.d10, Die.d8 } },
+                    <= 110 => new("Damage Modifier") { Dice = new() { Die.d10, Die.d10 } },
+                    <= 120 => new("Damage Modifier") { Dice = new() { Die.d10, Die.d10, Die.d2 } },
+                         _ => new("Damage Modifier") { Dice = new() { Die.d10, Die.d10, Die.d4 } }, // TODO No idea how to extend this, there's no obvious progression
                 };
             }  }
         public string DamageModifierCurrent { get; set; }

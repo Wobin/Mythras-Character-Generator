@@ -10,4 +10,8 @@
         d12 = 12,
         d100 = 100,
     }    
+    public class DiceModel
+    {
+        public Die Die { get; set; }
+    }
 }
