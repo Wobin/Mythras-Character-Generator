@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-SO\/fuIIWUxoIu1OABrOpK5n\/AvzxJcg+0H3PT1eutAE=",
+      "hash": "sha256-VVdlToXaidnW7ulow4gm81dfZE000nK7yX4OYX59bdM=",
       "url": "css\/app.css"
     },
     {
@@ -57,8 +57,16 @@
       "url": "icon-512.png"
     },
     {
+      "hash": "sha256-0AuKWlQY1u4JSxRh\/efvEprT\/vi1eJurOMTeFSaO+pU=",
+      "url": "images\/attrBar.png"
+    },
+    {
       "hash": "sha256-hjr5f7PAMs31GT2Qs\/jnudIJvhuJraJIJrb0Qs84iRM=",
       "url": "images\/MythrasLogo.png"
+    },
+    {
+      "hash": "sha256-LD97F\/4ZRyTuF62cvfgjQ4ed6zDbpDkMIDt3UmME7jM=",
+      "url": "images\/statBar.png"
     },
     {
       "hash": "sha256-nQI8CZrCOS1LC\/xE4zL6B2ydnY5ND8i6WCcrgFGxuEk=",
@@ -309,7 +317,7 @@
       "url": "_framework\/TypeSupport.dll"
     },
     {
-      "hash": "sha256-\/nK0Zg5U2uTEi6d1WEx0BHhTi3uTwuxduaw3t6uTyCE=",
+      "hash": "sha256-c1SgKMgBb9TWJnMf0wqUecwpYHntRkZf9\/7+jvvLx\/0=",
       "url": "_framework\/MythrasCharacterGenerator.dll"
     },
     {
@@ -469,7 +477,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-0gw2aWYriU7D72\/UHN1a8MMw7hp\/4d2CbF+xXKk08ao=",
+      "hash": "sha256-Z0zaM0Bo6BrFlS\/U1gf7QmgUKt8\/pniYaaHDwpHqUpg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -477,5 +485,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "oVq4QQty"
+  "version": "iHm09yfq"
 };
