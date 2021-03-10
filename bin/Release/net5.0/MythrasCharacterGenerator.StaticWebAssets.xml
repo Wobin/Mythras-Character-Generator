@@ -1,0 +1,6 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="F:\Projects\Mythras\MythrasCharacterGenerator\bin\Release\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="F:\Projects\Mythras\MythrasCharacterGenerator\obj\Release\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/Blazor-State" Path="C:\Users\Benjamin\.nuget\packages\blazor-state\3.4.4\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Radzen.Blazor" Path="C:\Users\Benjamin\.nuget\packages\radzen.blazor\3.1.4\build\..\staticwebassets\" />
+</StaticWebAssets>
